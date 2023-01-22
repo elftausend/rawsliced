@@ -1,13 +1,12 @@
-
 /// An element wise assign operation.
 /// `lhs` is modified by `rhs` somehow.
 /// # Example
 /// ```
 /// let mut lhs = [1, 2, 3, 4, 5, 6, 7];
 /// let rhs =     [4, 2, 1, 5, 4, 3, 1];
-/// 
+///
 /// sliced::ew_assign_binary(&mut lhs, &rhs, |lhs, rhs| *lhs -= rhs);
-/// 
+///
 /// assert_eq!([-3, 0, 2, -1, 1, 3, 6], lhs)
 /// ```
 pub fn ew_assign_binary<T, F>(lhs: &mut [T], rhs: &[T], f: F)
@@ -36,7 +35,7 @@ mod tests {
     #[test]
     fn test_ew_assign_binary() {
         let mut lhs = [1, 2, 3, 4, 5, 6, 7];
-        let rhs =     [4, 2, 1, 5, 4, 3, 1];
+        let rhs = [4, 2, 1, 5, 4, 3, 1];
 
         ew_assign_binary(&mut lhs, &rhs, |lhs, rhs| *lhs += rhs);
 
